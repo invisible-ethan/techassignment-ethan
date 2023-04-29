@@ -19,10 +19,11 @@ services:
 
   web:
     container_name: react_app
+    image: ${{ env.AWS_LIGHTSAIL_SERVICE_NAME }}:release
     restart: on-failure
     build:
       context: .
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile
     volumes:
       - ./src:/app/src
     ports:
