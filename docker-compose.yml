@@ -1,4 +1,4 @@
-version: "1"
+version: "3.7"
 services:
   nginx-react:
     image: techassignment-ethan:latest
