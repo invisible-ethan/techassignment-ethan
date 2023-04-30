@@ -1,0 +1,12 @@
+version: "1"
+services:
+  nginx-react:
+    image: techassignment-ethan:latest
+    container_name: techassignment-ethan
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 80:80
+    environment:
+      NODE_ENV: dev
