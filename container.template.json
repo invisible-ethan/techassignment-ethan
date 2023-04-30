@@ -1,6 +1,6 @@
 {
     "containers": {
-      "app": {
+      "techassignment-ethan": {
         "image": "",
         "environment": {
           "APP_ENV": "release",
@@ -12,7 +12,7 @@
       }
     },
     "publicEndpoint": {
-      "containerName": "container-service-1",
+      "containerName": "techassignment-ethan",
       "containerPort": 80,
       "healthCheck": {
         "healthyThreshold": 2,
