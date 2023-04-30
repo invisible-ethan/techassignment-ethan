@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ main ]
 env:
-  AWS_REGION: ap-northeast-1
+  AWS_REGION: ap-northeast-2
   AWS_LIGHTSAIL_SERVICE_NAME: container-service-1
 
 jobs:
