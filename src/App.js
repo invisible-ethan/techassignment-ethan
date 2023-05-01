@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
-function App() {
+import "./App.css";
+import logo from "./logo.svg";
+
+import Login from "./components/Login";
+import NotFound from "./components/NotFound";
+import ProfilePic from "./components/ProfilePic";
+
+const App = () => {
   return (
-    <div className="App">
+    <BrowserRouter>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.dsd
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
-    </div>
+      <div className="content">
+        <Routes>
+          <Route path="*" element={<NotFound />} />
+          <Route index element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profilepic" element={<ProfilePic />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
