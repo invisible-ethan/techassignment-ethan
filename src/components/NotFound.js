@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+// Handle wrong route
 const NotFound = () => {
   return (
     <div>

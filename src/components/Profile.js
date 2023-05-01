@@ -4,6 +4,7 @@ import { googleLogout } from "@react-oauth/google";
 
 import { getUserEmail, logout } from "./../util/util";
 
+// To be added into config file
 const apiEndpoint =
   "https://f1ny7sbemc.execute-api.ap-east-1.amazonaws.com/default/profilepic";
 const xApiKey = "sgDpwB06kc66FNE58qFRO7DId1M682sP7I8gT7Bq";
@@ -12,6 +13,7 @@ const Profile = () => {
   const [modifiedDateTime, setModifiedDateTime] = useState("");
   const [imgData, setImgData] = useState(null);
 
+  //Load profile pic
   useEffect(() => {
     fetch(apiEndpoint + "?email=" + getUserEmail(), {
       mode: "cors",
@@ -29,6 +31,8 @@ const Profile = () => {
   }, []);
 
   const route = useNavigate();
+  
+  // Handle logout action
   const handleLogout = () => {
     googleLogout();
     logout();

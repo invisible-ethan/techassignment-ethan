@@ -11,6 +11,7 @@ import Profile from "./components/Profile";
 import PublicRoute from "./util/PublicRoute";
 import PrivateRoute from "./util/PrivateRoute";
 
+// Routing of the app
 const App = () => {
   return (
     <BrowserRouter>

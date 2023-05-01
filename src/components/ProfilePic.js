@@ -6,6 +6,7 @@ import {
   getUserEmail,
 } from "./../util/util";
 
+// To be added into config file
 const apiEndpoint =
   "https://f1ny7sbemc.execute-api.ap-east-1.amazonaws.com/default/profilepic";
 const xApiKey = "sgDpwB06kc66FNE58qFRO7DId1M682sP7I8gT7Bq";
@@ -15,6 +16,7 @@ const ProfilePic = () => {
   const [profilePic, setProfilePic] = useState(null);
   const [imgData, setImgData] = useState(null);
 
+  // Handle image file change and show preview.
   const onChangePicture = (e) => {
     if (e.target.files[0]) {
       console.log("picture: ", e.target.files);
@@ -27,6 +29,7 @@ const ProfilePic = () => {
     }
   };
 
+  // upload the image to S3 and go to profile page
   const upload = () => {
     let body = {
       email: getUserEmail(),
@@ -50,7 +53,7 @@ const ProfilePic = () => {
       </h3>
       <h4 style={{ marginBottom: 0 }}>Please upload your profile picture</h4>
       <div>
-        <input id="profilePic" type="file" onChange={onChangePicture} />
+        <input id="profilePic" type="file" accept="image/*" onChange={onChangePicture} />
         <button
           onClick={upload}
           style={{ display: imgData ? "block" : "none" }}
