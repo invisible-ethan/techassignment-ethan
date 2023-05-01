@@ -15,3 +15,9 @@ export const getUserFamilyName = () =>{
 export const getUserEmail = () =>{
     return sessionStorage.getItem('email');
 }
+
+export const logout = () => {
+    sessionStorage.setItem('given_name', "");
+    sessionStorage.setItem('family_name', "");
+    sessionStorage.setItem('email', "");
+}

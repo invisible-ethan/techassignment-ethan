@@ -7,6 +7,9 @@ import logo from "./logo.svg";
 import Login from "./components/Login";
 import NotFound from "./components/NotFound";
 import ProfilePic from "./components/ProfilePic";
+import Profile from "./components/Profile";
+import PublicRoute from "./util/PublicRoute";
+import PrivateRoute from "./util/PrivateRoute";
 
 const App = () => {
   return (
@@ -17,9 +20,14 @@ const App = () => {
       <div className="content">
         <Routes>
           <Route path="*" element={<NotFound />} />
-          <Route index element={<Login />} />
+          <Route element={<PublicRoute />}>
+            <Route index element={<Login />} />
+          </Route>
           <Route path="/login" element={<Login />} />
-          <Route path="/profilepic" element={<ProfilePic />} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/profilepic" element={<ProfilePic />} />
+            <Route path="/profile" element={<Profile />} />
+          </Route>
         </Routes>
       </div>
     </BrowserRouter>
